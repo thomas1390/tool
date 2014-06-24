@@ -1,0 +1,48 @@
+
+功能说明：
+脚本执行后，根据收件人列表addr_list.txt，每隔[0,40]s内自动发送一封邮件，省去人力重复发送大量相同内容的邮件；
+
+设计说明:
+脚本完全模拟了foxmail发送一封邮件的过程，参照RFC5321对发送协议进行了规范和标准化
+
+发送流程：
+建立SMTP连接后，每发送15封邮件断开连接，重新建立连接发送，这样做的目的是避免发送太快被识别为垃圾邮件而将发送账户或者ip地址禁掉
+
+不足之处：
+1)没有引入try、catch功能，健壮性不够；
+2)如果邮箱地址不标准，如本应为abc@def.net，实际上只有abc，则程序会报错退出，作为一个简便脚本，没有对其进一步完善
+
+测试结果：
+使用aliyun发送，aliyun、gmail显示接收邮件正常，qq邮箱接收会将表格下面的内容显示到表格右侧，推测可能是不同网页邮箱解码的实现稍有不同，脚本测试结果与foxmail相同；
+
+使用说明：
+本程序在python 3.4下调试通过。
+1)将邮件地址每个一行拷贝到addr_list.txt，注意每行最后不要多空格
+
+2)修改脚本中的变量为布置给自己使用的邮箱
+#对发送邮箱进行更改
+sender = 'xxx@test.net'
+#对邮箱用户名进行更改
+username = 'xxx@test.net'
+#对邮箱密码进行更改
+password = '*****'
+
+3)在当前目录下，cmd运行vr_test.py，增加了发送ch或en的option
+如
+C:\python\vr_mail_script_ver2>vr_test_ver2.py --ch	发送这次的中文邮件
+
+C:\python\vr_mail_script_ver2>vr_test_ver2.py --en	发送上次的英文邮件
+
+4)发送完结果会同时记录到send_log.txt,如
+Wed, 14 May 2014 00:09:59 -0000
+sent1:czffds@test.net
+sent2:hezerul@mmu.edu.my
+sent3:snece1980@gmil.com
+sent4:kmatsuo@aoki-medialab.org
+sent5:rpizzolante@unisa.it
+sent6:soleimani@razi.ac.ir
+sent7:knatesan@asu.edu
+sent8:szucs@tmit.bme.hu
+
+另外需注意：
+脚本ch和en文件夹下的文件请只作复制、删除，不要对内容作任何修改，这两个文件使用UTF8编码保存，存放邮件的txt格式和html格式；

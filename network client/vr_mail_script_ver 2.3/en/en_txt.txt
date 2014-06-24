@@ -1,0 +1,73 @@
+The 4th International Conference on VirtualReality and Visualization(ICVRV 2014)
+Call for Paper
+        ICVRV 2014, sponsored by China Computer Federation, co-sponsored by the VR Committee of the China System Simulation Association, the VR and Visualization Committee of China Computer Federation, the VR committee of China Society of Image and Graphics and IEEE Computer Society, undertaken by Shenyang Aerospace University, will be held on August 30-31, 2014 in Shenyang, China. At the conference the scientific scholars, engineers andtechnicians who work in the field of virtual reality and visualization technology will come together to make wide academic exchanges, study development strategy, promote the commercialization of research findings, and work together to boost the development and application of virtual reality and visualization technology. The Proceedings will be published by IEEE CPS, and the papers in the proceedings will be indexed by EI. Selected papers will be recommended to journal publication, such as International Journal of Modeling, Simulation, and Scientific Computing (EI indexed).
+        The conference will invite well known VR experts to give keynote speeches, hold exhibition for newest scientific and technology achievements and provide a platform for the researchers, merchants to show their products.
+ 
+Conference topics (including, but not limited to)
+Modeling Technique
+Mixed Reality
+Animation
+VR sensor technology
+Real-time graphics rendering
+Web-3D
+Dynamic Texture Synthesis
+Three-dimension data acquisition
+techniques
+Space positioning technology
+Haptic rendering touch
+Intelligent Virtual Environment
+Virtual Geographic Environments
+Collaborative VR
+Growth of virtual plant simulation
+Augmented reality (AR)
+Virtual Design/ Manufacturing/
+Engineering
+Various types of simulators
+Simulation
+
+VR system architecture
+Space of Sound
+Machine Vision
+Image-based rendering
+Data Visualization
+Geometry compression
+Psychology in the VR
+Embedded Graphics System
+Graphics chip
+Distributed Virtual Environment
+Regional and Digital Cities, Digital
+Distributed Systems
+Visualization of Mining and Exploration
+Behavioral Modeling
+Virtual enterprises and communities
+Digital Entertainment and Education
+VR applications
+Online Games
+Volume Rendering
+Multi-resolution techniques
+Multimedia
+Point rendering and drawing
+Optical Display Technology
+VRML technology
+Graphics hardware acceleration
+VR application of pattern recognition
+Three-dimension reconstruction of medical images
+Three-dimension Geographic Information System
+Multimodal User Interface
+Application of remote sensing image processing
+Human-computer interaction technology
+Application of the virtual human body
+Artificial Life
+VR Games 
+Virtual Reality Audio Systems
+ 
+Requirements 
+1. Papers are not published elsewhere or submitted to other conferences, journals, no more than 8 pages (regular paper) or 4 pages (short paper); 
+2. A complete paper should be submitted using the templates when the submission is available (will be in March 2014, https://www.easychair.org/conferences/?conf=icvrv2014);
+    paper template download :  word
+3. Papers include: title, summary, text, references, etc.; 
+4. Language: English only;
+5. Contributors must include name, organization, mailing address, telephone, and email address at the end of the paper.
+6. Contact email address:  icvrv2014sau@gmail.com
+7.Conference website: http://chinavr.sau.edu.cn/ICVRV2014/index.php
+ 
