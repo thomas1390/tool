@@ -1,0 +1,41 @@
+一、程序原理：
+1、从mysql数据库中读取出所有目标域名的url，分析这些url地址，形成网站的树状结构；
+2、基于树状结构，对网站进行可能被泄露的敏感文件的扫描。
+
+二、开发说明：
+详见其余两个小tool的描写，这个工具主要是将其他两个工具整个起来了，完成了一体化的树状结构构造和敏感文件扫描。
+
+三、编译指令：
+[songkun@localhost 0311]$ ll
+total 88
+-rw-rw-r-- 1 songkun songkun  5223 Mar 10 11:49 curl_func.h
+-rw-rw-r-- 1 songkun songkun  3087 Mar 13 09:29 mysql.h
+-rw-rw-r-- 1 songkun songkun   690 Jan 30 23:20 rxp.h
+-rw-rw-r-- 1 songkun songkun  3297 Mar 13 10:09 seek_sensitive_file.h
+-rw-rw-r-- 1 songkun songkun  4004 Mar 13 13:42 sfs_net.c
+-rw-rw-r-- 1 songkun songkun  1313 Mar 13 09:32 tree_full_algorithm.h
+-rw-rw-r-- 1 songkun songkun  4501 Mar 13 13:40 tree_operate.h
+-rw-rw-r-- 1 songkun songkun  1854 Mar  3 18:02 url_split.h
+-rw-rw-r-- 1 songkun songkun   278 Mar 13 13:43 usage.h
+[songkun@localhost 0311]$ gcc -Wall -o sfs_net -g sfs_net.c -lcurl `mysql_config --cflags --libs`
+In file included from sfs_net.c:12:
+mysql.h: In function 'sql_init':
+mysql.h:20: warning: unused variable 'my_res'
+mysql.h: In function 'sql_locale':
+mysql.h:55: warning: control reaches end of non-void function
+mysql.h: In function 'sql_truncate':
+mysql.h:73: warning: control reaches end of non-void function
+[songkun@localhost 0311]$
+以上三个告警，基本可以忽略掉。
+
+四、使用说明：
+[test@localhost 0311]$ ./sfs_net
+        ./sfs_net url domain-port HEAD-method(0,1) need-cookie(0,1)
+        url: used for regex,not need ^http://
+        Example:./sfs_net www.test.com 80 0 0
+./sfs_net www.test.com 80 0 0
+说明对数据库中以www.test.com开头的url进行处理，这个域名的端口是80，0表示使用GET方法，后面一个0表示不使用cookie文件（如果使用的话，需在当前目录手动创建文件cookie.txt）
+
+五、不足之处：
+1、GET方法进行HTTP请求时，服务器会返回整个文件，如果文件较大，则造成无谓的文件下载和等待时间，下面会考虑对文件大小进行判断
+2、目前cookie文件，必须使用另外一个小工具生成，并拷贝到当前目录下，命名必须为cookie.txt，这一点不够灵活
