@@ -1,4 +1,4 @@
 small tool
 ====
 
-some small tools produced owning to work and interest
+some small tools written during working and for interest
